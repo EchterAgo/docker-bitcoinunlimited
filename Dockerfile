@@ -8,10 +8,10 @@ RUN useradd -r bitcoin \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV BITCOIN_VERSION=1.6.0.1
+ENV BITCOIN_VERSION=1.7.0.0
 ENV BITCOIN_FILENAME=BUcash-${BITCOIN_VERSION}-linux64.tar.gz
 ENV BITCOIN_URL=https://www.bitcoinunlimited.info/downloads/${BITCOIN_FILENAME}
-ENV BITCOIN_SHA256=68023e6faefe7cfee8eee6cffb6200f52d47aa89c305323d97063664b514c94c
+ENV BITCOIN_SHA256=4122a3e25e963e4f63f82c931fbdad42500611533f93c8d89ed3570d6f54eb05
 ENV BITCOIN_DATA=/home/bitcoin/.bitcoin
 ENV PATH=/opt/BUcash-${BITCOIN_VERSION}/bin:$PATH
 
