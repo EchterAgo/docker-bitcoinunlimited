@@ -1,12 +1,12 @@
 FROM debian:stable-slim
 LABEL maintainer="Axel Gembe <derago@gmail.com>"
 
-ENV BITCOIN_VERSION=1.7.0.0
-ENV BITCOIN_FILENAME=BUcash-${BITCOIN_VERSION}-linux64.tar.gz
+ENV BITCOIN_VERSION=1.8.0.0
+ENV BITCOIN_FILENAME=bch-unlimited-${BITCOIN_VERSION}-linux64.tar.gz
 ENV BITCOIN_URL=https://www.bitcoinunlimited.info/downloads/${BITCOIN_FILENAME}
-ENV BITCOIN_SHA256=66345fd4b813f4c5a704ea7fdd60027be467008b10cf32db203146724128d140
+ENV BITCOIN_SHA256=d36da1380e2b5c5412c52be958a7583bcab6d7a7bbb8057417eb892851e8bdd4
 ENV BITCOIN_DATA=/data
-ENV PATH=/opt/BUcash-${BITCOIN_VERSION}/bin:$PATH
+ENV PATH=/opt/bch-unlimited-${BITCOIN_VERSION}/bin:$PATH
 
 RUN set -ex && \
     apt-get update -y && \
