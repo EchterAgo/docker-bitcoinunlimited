@@ -10,7 +10,7 @@ ENV PATH=/opt/bch-unlimited-${BITCOIN_VERSION}/bin:$PATH
 
 RUN set -ex && \
     apt-get update -y && \
-    apt-get install -y curl && \
+    apt-get install -y curl libjemalloc2 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     curl -SLO "$BITCOIN_URL" && \
@@ -24,6 +24,8 @@ VOLUME ["/data"]
 RUN ln -s /data /.bitcoin
 
 EXPOSE 8332 8333 18332 18333 18443 18444
+
+ENV LD_PRELOAD /usr/lib/x86_64-linux-gnu/libjemalloc.so.2
 
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
